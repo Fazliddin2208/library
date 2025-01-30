@@ -1,0 +1,27 @@
+input {
+  outline: none !important;
+  box-shadow: none !important;
+  &:hover,
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.my-input {
+  box-shadow: 0 0 4px 0 #00000076;
+  border-radius: 40px !important;
+  outline: none !important;
+  border: none !important;
+  input {
+    border-radius: 40px;
+  }
+
+  .rs-dropdown {
+    button {
+      background: none !important;
+      border-radius: 40px 0 0 40px;
+      height: 100% !important;
+    }
+  }
+}
