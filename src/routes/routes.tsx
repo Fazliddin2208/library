@@ -3,7 +3,6 @@ import {RoutesList} from "./routes-list";
 import LoginPage from "@/page/LoginPage";
 import NotFoundPage from "@/page/NotFoundPage";
 import {MainLayout} from "@/layout/main-layout";
-import BgCover from "@/assets/images/login.png";
 
 // const loadPage = (page: ReactNode) => lazy(() => import(`@/pages/${page}`));
 interface RouteTypes {
@@ -37,14 +36,6 @@ export const ROUTES = () => {
 
   return (
     <>
-      <img
-        src={BgCover}
-        alt="Cover"
-        className="absolute z-0 left-0 top-0 h-full w-full"
-        style={{
-          filter: "drop-shadow(0px 0px 10px #EC2C5A)",
-        }}
-      />
       <Routes>
         <Route path="/" element={<MainLayout />}>
           {mainRoutes}

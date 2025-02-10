@@ -1,26 +1,34 @@
-import {Button, Dropdown} from "rsuite";
-import {Languages} from "lucide-react";
 import {LangIcon} from "@/lib/icons/LangIcon";
 import {FaCaretDown} from "react-icons/fa6";
+import {Box, Button} from "@chakra-ui/react";
+import {MenuContent, MenuItem, MenuRoot, MenuTrigger} from "@/components/ui/menu";
 
-type Props = {};
-
-const renderIconButton = (props: any, ref: any) => {
+export default function ChangeLangComponent() {
   return (
-    <Button className="my-input !bg-light flex items-cecnter gap-2 w-full" {...props} ref={ref}>
-      <LangIcon />
-      Salom <FaCaretDown />
-    </Button>
-  );
-};
-
-export default function ChangeLangComponent({}: Props) {
-  return (
-    <Dropdown renderToggle={renderIconButton} className="col-start-4">
-      <Dropdown.Item icon={<Languages />}>New File</Dropdown.Item>
-      <Dropdown.Item icon={<Languages />}>New File with Current Profile</Dropdown.Item>
-      <Dropdown.Item icon={<Languages />}>Download As...</Dropdown.Item>
-      <Dropdown.Item icon={<Languages />}>Export PDF</Dropdown.Item>
-    </Dropdown>
+    <MenuRoot>
+      <MenuTrigger asChild>
+        <Button
+          variant="outline"
+          className="my-input bg-light w-full rounded-full p-5 flex items-center justify-between"
+        >
+          <LangIcon />
+          Eng <FaCaretDown />
+        </Button>
+      </MenuTrigger>
+      <MenuContent>
+        <MenuItem value="eng" valueText="eng">
+          <Box flex="1">Eng</Box>
+        </MenuItem>
+        <MenuItem value="Uzb" valueText="Uzb">
+          <Box flex="1">Uzb</Box>
+        </MenuItem>
+        <MenuItem value="rus" valueText="rus">
+          <Box flex="1">Rus</Box>
+        </MenuItem>
+        <MenuItem value="tur" valueText="tur">
+          <Box flex="1">Tur</Box>
+        </MenuItem>
+      </MenuContent>
+    </MenuRoot>
   );
 }

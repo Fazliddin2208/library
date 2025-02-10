@@ -1,30 +1,28 @@
+import {MenuContent, MenuItem, MenuRoot, MenuTrigger} from "@/components/ui/menu";
+import {AvatarFallback, AvatarImage, AvatarRoot, Button} from "@chakra-ui/react";
 import {FaCaretDown} from "react-icons/fa6";
-import {Avatar, Button, Dropdown} from "rsuite";
-
-const renderIconButton = (props: any, ref: any) => {
-  return (
-    <Button className="my-input !bg-light flex items-center !justify-between gap-2 !p-1 w-full" {...props} ref={ref}>
-      <Avatar circle size="sm" />
-      Salom <FaCaretDown className="mr-3" />
-    </Button>
-  );
-};
 
 export default function ProfileComponent() {
   return (
-    <Dropdown renderToggle={renderIconButton} className="col-start-8">
-      <Dropdown.Item panel style={{padding: 10, width: 160}}>
-        <p>Signed in as</p>
-        <strong>Tony</strong>
-      </Dropdown.Item>
-      <Dropdown.Separator />
-      <Dropdown.Item>Your profile</Dropdown.Item>
-      <Dropdown.Item>Your stars</Dropdown.Item>
-      <Dropdown.Item>Your Gists</Dropdown.Item>
-      <Dropdown.Separator />
-      <Dropdown.Item>Help</Dropdown.Item>
-      <Dropdown.Item>Settings</Dropdown.Item>
-      <Dropdown.Item>Sign out</Dropdown.Item>
-    </Dropdown>
+    <>
+      <MenuRoot>
+        <MenuTrigger asChild className="my-input rounded-full bg-light p-1">
+          <button className="flex items-center justify-between pr-2">
+            <AvatarRoot size={"sm"}>
+              <AvatarFallback title="Person name" />
+              <AvatarImage src="https://bit.ly/sage-adebayo" />
+            </AvatarRoot>{" "}
+            Open <FaCaretDown className="mr-3" />
+          </button>
+        </MenuTrigger>
+        <MenuContent>
+          <MenuItem value="new-txt">New Text File</MenuItem>
+          <MenuItem value="new-file">New File...</MenuItem>
+          <MenuItem value="new-win">New Window</MenuItem>
+          <MenuItem value="open-file">Open File...</MenuItem>
+          <MenuItem value="export">Export</MenuItem>
+        </MenuContent>
+      </MenuRoot>
+    </>
   );
 }

@@ -1,3 +1,8 @@
+a {
+  text-decoration: none !important;
+  // color: inherit !important;
+}
+
 input {
   outline: none !important;
   box-shadow: none !important;
@@ -9,19 +14,17 @@ input {
 }
 
 .my-input {
-  box-shadow: 0 0 4px 0 #00000076;
-  border-radius: 40px !important;
-  outline: none !important;
-  border: none !important;
-  input {
-    border-radius: 40px;
-  }
+  box-shadow: 0 0 4px 0 #dcdcdc;
+}
 
-  .rs-dropdown {
-    button {
-      background: none !important;
-      border-radius: 40px 0 0 40px;
-      height: 100% !important;
+.my-checkbox {
+  .chakra-checkbox__control {
+    background: var(--primary);
+
+    svg {
+      polyline {
+        color: var(--light);
+      }
     }
   }
 }

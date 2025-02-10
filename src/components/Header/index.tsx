@@ -5,7 +5,7 @@ import TimeComponent from "./ui/TimeComponent";
 
 export default function HeaderComponent() {
   return (
-    <div className="px-[46px] py-[25px] grid grid-cols-8 gap-6">
+    <div className="pr-[46px] py-[25px] grid grid-cols-8 gap-6">
       <SearchComponent />
       <ChangeLangComponent />
       <TimeComponent />

@@ -25,7 +25,7 @@ export default function TimeComponent() {
   }, []);
 
   return (
-    <div className="col-start-5 col-span-3 my-input grid grid-cols-2 bg-light">
+    <div className="col-start-5 col-span-3 my-input grid grid-cols-2 bg-light rounded-full">
       <div className="flex items-center justify-center">
         <Clock9 color="var(--primary)" size={20} className="mr-2" />
         {time}

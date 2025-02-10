@@ -4,11 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
-}
-
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
   line-height: 1.5;
   font-weight: 400;
@@ -21,10 +17,11 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 body {
   margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
 }
 
 @media (prefers-color-scheme: light) {
@@ -65,7 +62,7 @@ body {
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
+    --border: #DCD9D9;
     --input: 240 5.9% 90%;
     --ring: 240 10% 3.9%;
     --chart-1: 12 76% 61%;
@@ -99,7 +96,7 @@ body {
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
+    --border: #DCD9D9;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
     --chart-1: 220 70% 50%;
@@ -112,9 +109,10 @@ body {
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: var(--border);
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--light);
+    color: var(--text);
   }
 }

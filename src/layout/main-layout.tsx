@@ -3,6 +3,7 @@ import {useEffect} from "react";
 import {Outlet, useNavigate} from "react-router-dom";
 import HeaderComponent from "@/components/Header";
 import SidebarComponent from "@/components/Sidebar";
+import BgCover from "@/assets/images/login.png";
 
 export const MainLayout = () => {
   const navigate = useNavigate();
@@ -12,14 +13,17 @@ export const MainLayout = () => {
     !token && navigate("/login");
   });
   return (
-    <div className="flex h-screen font-inter relative z-10 p-6">
-      <SidebarComponent />
-      <div className="flex flex-col flex-1 bg-bg">
-        <HeaderComponent />
-        <main className="border">
-          <Outlet />
-        </main>
+    <>
+      <img src={BgCover} alt="Cover" className="absolute z-0 left-0 top-0 h-full w-full" />
+      <div className="flex h-screen font-inter relative z-10 p-6">
+        <SidebarComponent />
+        <div className="flex flex-col flex-1 bg-bg border w-[calc(100%-300px)] pl-[46px]">
+          <HeaderComponent />
+          <main className="border">
+            <Outlet />
+          </main>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
