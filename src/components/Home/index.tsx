@@ -1,46 +1,16 @@
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import QuotesSection from "./sections/QuotesSection";
 
 export default function HomeComponent() {
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: {max: 4000, min: 3000},
-      items: 1,
-    },
-    desktop: {
-      breakpoint: {max: 3000, min: 1024},
-      items: 1,
-    },
-    tablet: {
-      breakpoint: {max: 1024, min: 464},
-      items: 1,
-    },
-    mobile: {
-      breakpoint: {max: 464, min: 0},
-      items: 1,
-    },
-  };
+  
 
   return (
-    <div>
-      <Carousel responsive={responsive} showDots dotListClass="custom-dot-list-style" className="border">
-        <div>Item 1</div>
-        <div>Item 2</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
-      </Carousel>
+    <div className="grid grid-cols-8 gap-10">
+      <QuotesSection />
+
+      <div className="col-span-5 border">
+        salom
+      </div>
     </div>
   );
 }

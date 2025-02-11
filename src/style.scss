@@ -28,3 +28,28 @@ input {
     }
   }
 }
+
+.quote-carousel {
+  background-image: linear-gradient(to bottom right, #eb5231 5%, #a63a7b 60%, #571fcf 100%);
+  border-radius: 10px;
+
+  .react-multi-carousel-list {
+    padding-bottom: 20px;
+  }
+
+  .quotes-dots {
+    justify-content: start;
+
+    li {
+      button {
+        border-color: var(--light) !important;
+      }
+    }
+
+    .react-multi-carousel-dot--active {
+      button {
+        background-color: var(--light);
+      }
+    }
+  }
+}
