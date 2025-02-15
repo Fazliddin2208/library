@@ -29,6 +29,10 @@ input {
   }
 }
 
+.gradient-bg {
+  background-image: linear-gradient(to bottom right, #eb5231 5%, #a63a7b 60%, #571fcf 100%);
+}
+
 .quote-carousel {
   background-image: linear-gradient(to bottom right, #eb5231 5%, #a63a7b 60%, #571fcf 100%);
   border-radius: 10px;
