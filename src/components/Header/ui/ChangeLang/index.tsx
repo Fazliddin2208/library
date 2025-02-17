@@ -9,7 +9,7 @@ export default function ChangeLangComponent() {
       <MenuTrigger asChild>
         <Button
           variant="outline"
-          className="my-input bg-light w-full rounded-full p-5 flex items-center justify-between"
+          className="my-input bg-light w-full rounded-full flex items-center justify-evenly px-2"
         >
           <LangIcon />
           Eng <FaCaretDown />
