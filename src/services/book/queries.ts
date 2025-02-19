@@ -7,7 +7,7 @@ export function useBooksList() {
     queryKey: [BOOK_ENDPOINTS.GET_BOOKS()],
     queryFn: () => getBooks(),
   });
-  const books = data;
+  const books = data?.data;
   return {
     books,
     isPending,

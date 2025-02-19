@@ -57,3 +57,15 @@ input {
     }
   }
 }
+
+.layout::-webkit-scrollbar {
+  width: 0px;
+}
+
+.layout::-webkit-scrollbar-track {
+  background: #d6d6d6;
+}
+
+.layout::-webkit-scrollbar-thumb {
+  background-color: #9e9e9e;
+}

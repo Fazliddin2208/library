@@ -19,7 +19,7 @@ export const MainLayout = () => {
         <SidebarComponent />
         <div className="flex flex-col flex-1 bg-bg w-[calc(100%-300px)] pl-[46px]">
           <HeaderComponent />
-          <main>
+          <main className="overflow-y-auto layout scroll-smooth">
             <Outlet />
           </main>
         </div>
