@@ -3,6 +3,7 @@ import {RoutesList} from "./routes-list";
 import LoginPage from "@/page/LoginPage";
 import NotFoundPage from "@/page/NotFoundPage";
 import {MainLayout} from "@/layout/main-layout";
+import RegisterPage from "@/page/RegisterPage";
 
 // const loadPage = (page: ReactNode) => lazy(() => import(`@/pages/${page}`));
 interface RouteTypes {
@@ -42,6 +43,7 @@ export const ROUTES = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
     </>
   );
