@@ -3,10 +3,17 @@ import {useLocalStorage} from "@/hooks/use-local-storage";
 import {UserType} from "@/types/UserType";
 import {AvatarFallback, AvatarImage, AvatarRoot} from "@chakra-ui/react";
 import {FaCaretDown} from "react-icons/fa6";
+import {useNavigate} from "react-router-dom";
 
 export default function ProfileComponent() {
+  const navigate = useNavigate();
   const {getItem} = useLocalStorage();
   const user: UserType | null = getItem("profile");
+
+  const logOut = () => {
+    useLocalStorage().deleteItem("token");
+    navigate("/login");
+  };
 
   return (
     <>
@@ -30,7 +37,7 @@ export default function ProfileComponent() {
           <MenuItem value="new-win" className="text-text">
             Payments
           </MenuItem>
-          <MenuItem value="open-file" className="text-text">
+          <MenuItem value="open-file" className="text-danger" onClick={logOut}>
             Logout
           </MenuItem>
         </MenuContent>
