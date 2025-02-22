@@ -28,16 +28,16 @@ export default function ProfileComponent() {
           </button>
         </MenuTrigger>
         <MenuContent bg={"var(--light)"}>
-          <MenuItem value="new-txt" className="text-text">
+          <MenuItem value="profile" className="text-text" onClick={() => navigate("/profile")}>
             Profile
           </MenuItem>
-          <MenuItem value="new-file" className="text-text">
+          <MenuItem value="favourite" className="text-text">
             Favourite
           </MenuItem>
-          <MenuItem value="new-win" className="text-text">
+          <MenuItem value="payment" className="text-text">
             Payments
           </MenuItem>
-          <MenuItem value="open-file" className="text-danger" onClick={logOut}>
+          <MenuItem value="logout" className="text-danger" onClick={logOut}>
             Logout
           </MenuItem>
         </MenuContent>

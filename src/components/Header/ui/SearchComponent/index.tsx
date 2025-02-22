@@ -2,27 +2,62 @@ import {InputGroup} from "@/components/ui/input-group";
 import {MenuContent, MenuItem, MenuRoot, MenuTrigger} from "@/components/ui/menu";
 import {Button, Input} from "@chakra-ui/react";
 import {ScanBarcode, SearchIcon} from "lucide-react";
-import { FaCaretDown } from "react-icons/fa6";
+import {useState} from "react";
+import {FaCaretDown} from "react-icons/fa6";
 
-type Props = {};
+interface FilterType {
+  title: string;
+  value: string;
+}
 
-export default function SearchComponent({}: Props) {
+const filters: FilterType[] = [
+  {
+    title: "All",
+    value: "all",
+  },
+  {
+    title: "Title",
+    value: "title",
+  },
+  {
+    title: "Author",
+    value: "author",
+  },
+  {
+    title: "Category",
+    value: "category",
+  },
+];
+
+export default function SearchComponent() {
+  const [selectedFilter, setSelectedFilter] = useState<FilterType>(filters[0]);
+
+  const handleFilterChange = (value: FilterType) => {
+    setSelectedFilter(value);
+  };
+  console.log(selectedFilter);
+
   return (
     <>
       <InputGroup flex="1" className="my-input col-span-3 bg-light rounded-full pr-4">
         <>
           <MenuRoot>
             <MenuTrigger asChild className="min-w-[100px] h-full rounded-s-full bg-[#F7F7FA]">
-              <Button variant="outline" size="sm">
-                Open <FaCaretDown />
+              <Button variant="outline" size="xs" className="text-sm">
+                {selectedFilter?.title} <FaCaretDown />
               </Button>
             </MenuTrigger>
-            <MenuContent>
-              <MenuItem value="new-txt">New Text File</MenuItem>
-              <MenuItem value="new-file">New File...</MenuItem>
-              <MenuItem value="new-win">New Window</MenuItem>
-              <MenuItem value="open-file">Open File...</MenuItem>
-              <MenuItem value="export">Export</MenuItem>
+            <MenuContent bg={"var(--light)"}>
+              {filters.map((filter) => (
+                <MenuItem
+                  key={filter.value}
+                  value={filter.value}
+                  className="text-text"
+                  onClick={() => handleFilterChange(filter)}
+                >
+                  {filter.title}
+                </MenuItem>
+              ))}
             </MenuContent>
           </MenuRoot>
           <Input placeholder="Username" />
