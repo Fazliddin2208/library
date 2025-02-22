@@ -1,6 +1,6 @@
 import {LangIcon} from "@/lib/icons/LangIcon";
 import {FaCaretDown} from "react-icons/fa6";
-import {Box, Button} from "@chakra-ui/react";
+import {Button} from "@chakra-ui/react";
 import {MenuContent, MenuItem, MenuRoot, MenuTrigger} from "@/components/ui/menu";
 
 const langs = [
