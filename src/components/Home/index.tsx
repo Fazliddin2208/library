@@ -5,7 +5,7 @@ import RecommendedSection from "./sections/RecommendedSection";
 export default function HomeComponent() {
   return (
     <div>
-      <div className="grid grid-cols-8 gap-10 pr-[46px]">
+      <div className="grid grid-cols-8 gap-10">
         <QuotesSection />
         <ArrivalsSection />
       </div>

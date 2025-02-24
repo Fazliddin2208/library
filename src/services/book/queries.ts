@@ -1,6 +1,6 @@
 import {useQuery} from "@tanstack/react-query";
 import {BOOK_ENDPOINTS} from "./endpoints";
-import {getBooks, getNewBooks} from ".";
+import {getBookById, getBooks, getNewBooks} from ".";
 
 export function useBooksList() {
   const {data, isPending, isError, refetch} = useQuery({
@@ -10,6 +10,20 @@ export function useBooksList() {
   const books = data?.data;
   return {
     books,
+    isPending,
+    isError,
+    refetch,
+  };
+}
+
+export function useBookById(id: string) {
+  const {data, isPending, isError, refetch} = useQuery({
+    queryKey: [BOOK_ENDPOINTS.GET_BOOK_BY_ID(id)],
+    queryFn: () => getBookById(id),
+  });
+  const book = data?.data;
+  return {
+    book,
     isPending,
     isError,
     refetch,

@@ -17,7 +17,7 @@ export const MainLayout = () => {
       <img src={BgCover} alt="Cover" className="absolute z-0 left-0 top-0 h-full w-full" />
       <div className="flex h-screen font-inter relative z-10 p-6">
         <SidebarComponent />
-        <div className="flex flex-col flex-1 bg-bg w-[calc(100%-300px)] pl-[46px]">
+        <div className="flex flex-col flex-1 bg-bg w-[calc(100%-300px)] px-[46px]">
           <HeaderComponent />
           <main className="overflow-y-auto layout scroll-smooth">
             <Outlet />
