@@ -18,12 +18,12 @@ export const RoutesList: IRoutesModel[] = [
     ],
   },
   {
-    path: "/book",
+    path: "/books",
     icon: <p>&copy;</p>,
     page: "",
     children: [
       {
-        path: "/book/:id",
+        path: "/books/:id",
         icon: <p>&copy;</p>,
         page: <BookViewPage />,
         permission: "CAN_SEE_BOOK",
