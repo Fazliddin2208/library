@@ -8,7 +8,7 @@ export default function RecommendedCards() {
   const limitedBooks = books?.slice(0, 8);
 
   return (
-    <div className="grid grid-cols-8 gap-4 pr-[46px]">
+    <div className="grid grid-cols-8 gap-4">
       {isPending
         ? Array.from({length: 8}).map((_, index) => <Skeleton key={index} height={"200px"} />)
         : limitedBooks?.map((book: BookType) => <RecommendedCard book={book} key={book?._id} />)}
