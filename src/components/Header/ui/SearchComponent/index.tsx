@@ -35,7 +35,6 @@ export default function SearchComponent() {
   const handleFilterChange = (value: FilterType) => {
     setSelectedFilter(value);
   };
-  console.log(selectedFilter);
 
   return (
     <>

@@ -3,7 +3,7 @@ import {BOOK_ENDPOINTS} from "./endpoints";
 import {getBookById, getBooks, getNewBooks} from ".";
 
 export function useBooksList() {
-  const {data, isPending, isError, refetch} = useQuery({
+  const {data, isPending, isError, refetch, error} = useQuery({
     queryKey: [BOOK_ENDPOINTS.GET_BOOKS()],
     queryFn: () => getBooks(),
   });
@@ -13,6 +13,7 @@ export function useBooksList() {
     isPending,
     isError,
     refetch,
+    error,
   };
 }
 
