@@ -29,10 +29,10 @@ export default function SidebarComponent() {
         <Link to="/about" className="text-text hover:text-primary">
           About
         </Link>
-        <Link to="/about" className="text-text hover:text-primary">
+        <Link to="/support" className="text-text hover:text-primary">
           Support
         </Link>
-        <Link to="/about" className="text-text hover:text-primary">
+        <Link to="/terms" className="text-text hover:text-primary">
           Terms and conditions
         </Link>
       </div>
